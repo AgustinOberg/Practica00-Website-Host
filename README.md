@@ -1,5 +1,6 @@
 # Website para Hosting Gaming
 ###### ©LXR
+###### Proyecto no terminado.
 
 - Maquetado - •
 - Prototipo - •
