@@ -41,6 +41,8 @@ body{
     height: 3em;
     padding-left: 41px;
     padding-right: 2.5rem;
+    position: fixed;
+    z-index: 2000;
 }
 
     .header img{
