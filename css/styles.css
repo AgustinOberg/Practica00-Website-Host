@@ -1,0 +1,299 @@
+:root{
+     --rosa: #E23E57;
+     --gris: #BFBFBF;
+     --negro: #2D2B29;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+}
+
+
+.pagina-entera{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas: 
+                        'header     header      header'
+                        'central    central     central'
+                        'ayuda      ayuda       ayuda'
+                        'caract     caract      caract'
+                        'info       info        info'
+                        'sponsor    sponsor     sponsor'
+                        'footer     footer      footer';
+
+}
+
+/*-----------------Header-----------------*/
+.header{
+    grid-area: header;
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 'logo      menu';
+    background: var(--rosa);
+    color: var(--gris);
+    width: 100%;
+    height: 3em;
+    padding-left: 41px;
+    padding-right: 2.5rem;
+}
+
+    .header img{
+       
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: 100%;
+    }
+    .menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    .menu a{
+        text-decoration: none;
+        color: var(--gris);
+        transition: 0.2s ease all;
+    }
+    .menu a:hover{
+        color:white;
+    }
+        
+    .menu .actual{
+        color:white;
+    }
+
+
+
+/*-----------------Central-----------------*/
+.central{
+    grid-area: central;
+    background: url(../img/main.jpg);
+    width: 100%;
+    height: 31rem;
+    display: grid;
+    background-size: cover;
+    background-position: center;
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-areas: 'texto vacio';
+
+}
+.central::after{
+    content:"";
+    width: 100%;
+    height: 31rem;
+    position: absolute;
+    background: rgb(226,62,87);
+    background: linear-gradient(180deg, rgba(226,62,87,1) 17%, rgba(0,212,255,0) 58%); 
+    opacity: 0.4; 
+   
+}
+    .texto-central{
+        grid-area: texto;
+        display: flex;
+        padding-left: 41px;
+        padding-top: 67px;
+        font-size: 1.5em;
+        flex-direction: column;
+        z-index: 900;
+    }
+    .titulo{
+        font-weight: 100;
+    }
+    .titulo span{
+        font-weight: 800;
+        color:var(--rosa)
+    }
+    .subtitulo{
+        font-size: 0.8em;
+        font-weight: 100;
+        color:black;
+        padding-top: 50px;
+    }
+
+
+/*-----------------Ayuda-----------------*/
+.ayudarte{
+    grid-area: ayuda;
+    background: var(--negro);
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-areas: 'texto   links';
+    height: 4em;
+}
+    .texto-ayuda{
+        grid-area: texto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+    .texto-ayuda span{
+        margin: 0.25em;
+        color: var(--rosa);
+        font-weight: 900;
+    }
+    .links-de-ayuda{
+        grid-area: links;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+    .links-de-ayuda a{
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        transition: 0.2s ease all;
+    }
+    .links-de-ayuda a:hover{
+        color: var(--rosa);
+    }
+
+    .links-de-ayuda a:nth-child(4){
+        padding-right: 40px;
+    }
+    
+
+
+/*-----------------Items-----------------*/
+.items{
+    grid-area: caract;
+    display: grid;
+    padding: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+    grid-template-areas: 'primero segundo tercero';
+}
+    .caracteristica{
+        display: flex;
+        height: 25em;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+        justify-content: flex-start;
+        background: var(--negro);
+    }
+    .imagen-caract{
+        width: 100%;
+        height: 100px;
+    }
+    .caracteristica h4{
+        padding-top: 20px;
+        color:white
+    }
+    .caracteristica p{
+        color:var(--gris);
+        padding-top:14px ;
+        padding-right: 1.5em;
+        padding-left: 1.5em;
+    }
+.items img{
+    width: 100px;
+    
+    height: 100px;
+}
+
+
+/*-----------------Info-----------------*/
+.info{
+    grid-area: info;
+    background: var(--rosa);
+    height: 13em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    align-items: center;
+
+}
+    .info p{
+        text-align: center;
+        margin-top: 25px;
+        padding-right: 40px;
+        padding-left: 40px;
+        color: var(--gris);
+        font-weight: 100;
+    }
+
+    .info h3{
+        background: white;
+        text-align: center;
+        border-top: 16px solid white;
+        border-bottom: 16px solid white;
+        border-right: 25px solid white;
+        border-left: 25px solid white;
+        font-weight: 100;
+        transition: 0.4s ease all;
+        
+        color:var(--rosa);
+        cursor: pointer;
+    }
+    .info h3:hover{
+        background: var(--negro);
+        border-top: 16px solid var(--negro);
+        border-bottom: 16px solid var(--negro);
+        border-right: 25px solid var(--negro);
+        border-left: 25px solid var(--negro);
+        
+
+    }
+
+
+/*-----------------Patrocinio-----------------*/
+.patrocinio{
+    grid-area: sponsor;
+    padding-left: 2.5em;
+    padding-top: 1.5em;
+
+}
+    .patrocinio h3{
+        font-size: 1.8em;
+        font-weight: 100;
+        color:var(--rosa)
+    }
+    .patrocinan{
+        padding-top: 1.5em;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 40px;
+    }
+    .sponsor{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .sponsor h4{
+        padding-top: 10px;
+        font-weight: 100;
+    }
+.patrocinan img{
+    height: 150px;
+    width: 150px;
+    margin-bottom: 20px;
+    clip-path: circle(60px);
+}
+
+
+/*-----------------Pie-----------------*/
+.pie{
+
+    grid-area: footer;
+    margin-top: 25px;
+    padding: 10px;
+    background: var(--negro);
+    color: white;
+    text-align: center;
+}
+.pie a{
+    color: var(--rosa);
+    font-weight: 800;
+    text-decoration: none;
+}
