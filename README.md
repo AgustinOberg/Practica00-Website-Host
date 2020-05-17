@@ -6,4 +6,4 @@
 - Prototipo - •
 - Estructura HTML - •
 - Diseño CSS - •
-- Diseño Responsive - X
+- Diseño Responsive - •
