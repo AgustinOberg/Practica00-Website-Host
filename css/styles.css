@@ -61,6 +61,8 @@ body{
         text-decoration: none;
         color: var(--gris);
         transition: 0.2s ease all;
+        text-align: center;
+        margin-left: 0.7em;
     }
     .menu a:hover{
         color:white;
@@ -127,6 +129,8 @@ body{
     grid-template-columns: 35% 65%;
     grid-template-areas: 'texto   links';
     height: 4em;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
 }
     .texto-ayuda{
         grid-area: texto;
@@ -134,9 +138,10 @@ body{
         align-items: center;
         justify-content: center;
         color: white;
+        text-align: center;
     }
     .texto-ayuda span{
-        margin: 0.25em;
+        display: contents;
         color: var(--rosa);
         font-weight: 900;
     }
@@ -152,15 +157,14 @@ body{
         text-align: center;
         text-decoration: none;
         color: white;
+        margin-left: 0.7em;
         transition: 0.2s ease all;
     }
     .links-de-ayuda a:hover{
         color: var(--rosa);
     }
 
-    .links-de-ayuda a:nth-child(4){
-        padding-right: 40px;
-    }
+    
     
 
 
@@ -168,9 +172,9 @@ body{
 .items{
     grid-area: caract;
     display: grid;
-    padding: 40px;
+    padding: 2.5em;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 40px;
+    grid-gap: 2.5em;
     grid-template-areas: 'primero segundo tercero';
 }
     .caracteristica{
@@ -264,7 +268,6 @@ body{
         padding-top: 1.5em;
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        grid-gap: 40px;
     }
     .sponsor{
         display: flex;
@@ -280,7 +283,7 @@ body{
     height: 150px;
     width: 150px;
     margin-bottom: 20px;
-    clip-path: circle(60px);
+    clip-path: circle(70px);
 }
 
 
@@ -288,7 +291,7 @@ body{
 .pie{
 
     grid-area: footer;
-    margin-top: 25px;
+    margin-top: 1.5em;
     padding: 10px;
     background: var(--negro);
     color: white;
@@ -298,4 +301,69 @@ body{
     color: var(--rosa);
     font-weight: 800;
     text-decoration: none;
+}
+
+/*-----------------Responsive-----------------*/
+@media (max-width:900px){
+    .header{
+        grid-template-columns: 20% 80%;
+    }
+    .central{
+        grid-template-areas: 'todo  todo';
+    }
+    .texto-central{
+        grid-area: todo;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .links-de-ayuda a:nth-child(4){
+        padding-right: 0px;
+    }
+    .ayudarte{
+        grid-template-columns: 25% 75%;
+        grid-gap: 15px;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+    .texto-ayuda span{
+        margin: 0;
+    }
+    .items{
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 100%;
+        grid-gap: 2.5em;
+        grid-template-areas:    'primero'
+                                'segundo'
+                                'tercero';
+    }
+    .caracteristica{
+        display: grid;
+        grid-template-columns: 30% 70%;
+        height: auto;
+        grid-template-areas: 'imagen    texto';
+        padding-top: 0px;
+    }
+        .imagen-caract{
+            margin-top: 0.6em;
+            margin-bottom: 0.6em;
+            grid-area: imagen;
+            height: 100%;
+            width: 100%;
+        }
+        .caracteristica p{
+            grid-area: texto;
+            font-size: 8px;
+            padding-left: 0;
+            padding-right: 2.5em;
+        }
+        .caracteristica h4{
+            grid-area: texto;
+        }
+        .zona-texto-item{
+            text-align: start;
+        }
+        .pie{
+            padding: 5px;
+        }
 }
